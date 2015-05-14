@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) -->
+<serviceGroup>
+    <service name="WSServer">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="tier2.ws.skeleton.WSServerMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">tier2.ws.skeleton.WSServerSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="howManyItemsId" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ws.tier2">
+            <actionMapping>urn:howManyItemsId</actionMapping>
+            <outputActionMapping>urn:howManyItemsIdResponse</outputActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException">urn:howManyItemsIdWSServerRemoteException</faultActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException_Exception">urn:howManyItemsIdWSServerRemoteException</faultActionMapping>
+        </operation>
+        <operation name="palletsStoredSinceStart" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ws.tier2">
+            <actionMapping>urn:palletsStoredSinceStart</actionMapping>
+            <outputActionMapping>urn:palletsStoredSinceStartResponse</outputActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException">urn:palletsStoredSinceStartWSServerRemoteException</faultActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException_Exception">urn:palletsStoredSinceStartWSServerRemoteException</faultActionMapping>
+        </operation>
+        <operation name="howManyItemsLocation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ws.tier2">
+            <actionMapping>urn:howManyItemsLocation</actionMapping>
+            <outputActionMapping>urn:howManyItemsLocationResponse</outputActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException">urn:howManyItemsLocationWSServerRemoteException</faultActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException_Exception">urn:howManyItemsLocationWSServerRemoteException</faultActionMapping>
+        </operation>
+        <operation name="totalItems" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ws.tier2">
+            <actionMapping>urn:totalItems</actionMapping>
+            <outputActionMapping>urn:totalItemsResponse</outputActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException">urn:totalItemsWSServerRemoteException</faultActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException_Exception">urn:totalItemsWSServerRemoteException</faultActionMapping>
+        </operation>
+        <operation name="placesOccupied" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ws.tier2">
+            <actionMapping>urn:placesOccupied</actionMapping>
+            <outputActionMapping>urn:placesOccupiedResponse</outputActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException">urn:placesOccupiedWSServerRemoteException</faultActionMapping>
+            <faultActionMapping faultName="WSServerRemoteException_Exception">urn:placesOccupiedWSServerRemoteException</faultActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

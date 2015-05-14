@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.tier2" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://ws.tier2" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://rmi.java/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax22="http://io.java/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://rmi.java/xsd" xmlns:ax23="http://io.java/xsd">
+            <xs:import namespace="http://io.java/xsd"/>
+            <xs:complexType name="RemoteException">
+                <xs:complexContent>
+                    <xs:extension base="ax23:IOException">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cause" nillable="true" type="xs:anyType"/>
+                            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.tier2" xmlns:ax24="http://rmi.java/xsd">
+            <xs:import namespace="http://rmi.java/xsd"/>
+            <xs:element name="WSServerRemoteException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RemoteException" nillable="true" type="ax24:RemoteException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="palletsStoredSinceStart">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="palletsStoredSinceStartResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="howManyItemsId">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="howManyItemsIdResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="howManyItemsLocation">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="howManyItemsLocationResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="placesOccupied">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="placesOccupiedResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="totalItems">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="totalItemsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+            <xs:complexType name="IOException">
+                <xs:sequence/>
+            </xs:complexType>
+        </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="howManyItemsIdRequest">
+    <wsdl:part name="parameters" element="ns:howManyItemsId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="totalItemsResponse">
+    <wsdl:part name="parameters" element="ns:totalItemsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="palletsStoredSinceStartResponse">
+    <wsdl:part name="parameters" element="ns:palletsStoredSinceStartResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="totalItemsRequest">
+    <wsdl:part name="parameters" element="ns:totalItems">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="palletsStoredSinceStartRequest">
+    <wsdl:part name="parameters" element="ns:palletsStoredSinceStart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="howManyItemsLocationResponse">
+    <wsdl:part name="parameters" element="ns:howManyItemsLocationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="howManyItemsLocationRequest">
+    <wsdl:part name="parameters" element="ns:howManyItemsLocation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="howManyItemsIdResponse">
+    <wsdl:part name="parameters" element="ns:howManyItemsIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="placesOccupiedRequest">
+    <wsdl:part name="parameters" element="ns:placesOccupied">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="placesOccupiedResponse">
+    <wsdl:part name="parameters" element="ns:placesOccupiedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WSServerRemoteException">
+    <wsdl:part name="parameters" element="ns:WSServerRemoteException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WSServerPortType">
+    <wsdl:operation name="howManyItemsId">
+      <wsdl:input message="ns:howManyItemsIdRequest" wsaw:Action="urn:howManyItemsId">
+    </wsdl:input>
+      <wsdl:output message="ns:howManyItemsIdResponse" wsaw:Action="urn:howManyItemsIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException" message="ns:WSServerRemoteException" wsaw:Action="urn:howManyItemsIdWSServerRemoteException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="palletsStoredSinceStart">
+      <wsdl:input message="ns:palletsStoredSinceStartRequest" wsaw:Action="urn:palletsStoredSinceStart">
+    </wsdl:input>
+      <wsdl:output message="ns:palletsStoredSinceStartResponse" wsaw:Action="urn:palletsStoredSinceStartResponse">
+    </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException" message="ns:WSServerRemoteException" wsaw:Action="urn:palletsStoredSinceStartWSServerRemoteException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="totalItems">
+      <wsdl:input message="ns:totalItemsRequest" wsaw:Action="urn:totalItems">
+    </wsdl:input>
+      <wsdl:output message="ns:totalItemsResponse" wsaw:Action="urn:totalItemsResponse">
+    </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException" message="ns:WSServerRemoteException" wsaw:Action="urn:totalItemsWSServerRemoteException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="placesOccupied">
+      <wsdl:input message="ns:placesOccupiedRequest" wsaw:Action="urn:placesOccupied">
+    </wsdl:input>
+      <wsdl:output message="ns:placesOccupiedResponse" wsaw:Action="urn:placesOccupiedResponse">
+    </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException" message="ns:WSServerRemoteException" wsaw:Action="urn:placesOccupiedWSServerRemoteException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="howManyItemsLocation">
+      <wsdl:input message="ns:howManyItemsLocationRequest" wsaw:Action="urn:howManyItemsLocation">
+    </wsdl:input>
+      <wsdl:output message="ns:howManyItemsLocationResponse" wsaw:Action="urn:howManyItemsLocationResponse">
+    </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException" message="ns:WSServerRemoteException" wsaw:Action="urn:howManyItemsLocationWSServerRemoteException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSServerHttpBinding" type="ns:WSServerPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="howManyItemsId">
+      <http:operation location="howManyItemsId"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="palletsStoredSinceStart">
+      <http:operation location="palletsStoredSinceStart"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="totalItems">
+      <http:operation location="totalItems"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="placesOccupied">
+      <http:operation location="placesOccupied"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="howManyItemsLocation">
+      <http:operation location="howManyItemsLocation"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSServerSoap11Binding" type="ns:WSServerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="howManyItemsId">
+      <soap:operation soapAction="urn:howManyItemsId" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="palletsStoredSinceStart">
+      <soap:operation soapAction="urn:palletsStoredSinceStart" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="totalItems">
+      <soap:operation soapAction="urn:totalItems" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="placesOccupied">
+      <soap:operation soapAction="urn:placesOccupied" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="howManyItemsLocation">
+      <soap:operation soapAction="urn:howManyItemsLocation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSServerSoap12Binding" type="ns:WSServerPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="howManyItemsId">
+      <soap12:operation soapAction="urn:howManyItemsId" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap12:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="palletsStoredSinceStart">
+      <soap12:operation soapAction="urn:palletsStoredSinceStart" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap12:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="totalItems">
+      <soap12:operation soapAction="urn:totalItems" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap12:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="placesOccupied">
+      <soap12:operation soapAction="urn:placesOccupied" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap12:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="howManyItemsLocation">
+      <soap12:operation soapAction="urn:howManyItemsLocation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerRemoteException">
+        <soap12:fault name="WSServerRemoteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSServer">
+    <wsdl:port name="WSServerHttpSoap12Endpoint" binding="ns:WSServerSoap12Binding">
+      <soap12:address location="http://localhost:8080/axis2/services/WSServer"/>
+    </wsdl:port>
+    <wsdl:port name="WSServerHttpSoap11Endpoint" binding="ns:WSServerSoap11Binding">
+      <soap:address location="http://localhost:8080/axis2/services/WSServer"/>
+    </wsdl:port>
+    <wsdl:port name="WSServerHttpEndpoint" binding="ns:WSServerHttpBinding">
+      <http:address location="http://localhost:8080/axis2/services/WSServer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

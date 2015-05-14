@@ -1,0 +1,16 @@
+module tier3
+{
+	module db
+	{
+		module corba
+		{
+			interface ItemDatabase
+			{
+				typedef sequence<string> StrArr;
+				StrArr getLocations(in long id, in long amount);
+				boolean stored(in long id, in long amount, in string location);
+				long countItems(in long id, in string location);
+			};
+		};
+	};
+};
